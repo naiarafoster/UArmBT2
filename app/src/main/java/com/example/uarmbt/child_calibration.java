@@ -45,7 +45,7 @@ public class child_calibration extends AppCompatActivity {
 
     private final static int REQUEST_ENABLE_BT = 1; // used to identify adding bluetooth names
 
-
+    BluetoothSPP bt = new BluetoothSPP(Context);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
