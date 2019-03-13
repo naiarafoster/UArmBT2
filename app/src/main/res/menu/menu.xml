@@ -7,7 +7,14 @@
         android:id="@+id/action_connect"
         android:icon="@drawable/round_bluetooth_black_18dp"
         android:title="@string/connect"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_disconnect"
+        android:icon="@drawable/ic_action_disconnect"
+        android:visible="true"
+        android:title="@string/disconnect"
+        app:showAsAction="always"/>
 
     <!-- More Options, should always be in the overflow -->
     <item android:id="@+id/action_overflow"

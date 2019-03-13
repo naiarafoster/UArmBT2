@@ -2,6 +2,7 @@
     <string name="app_name">UArm</string>
     <string name="title_activity_child_calibration">UArm</string>
     <string name="connect">connect</string>
+    <string name="disconnect">disconnect</string>
     <string name="action_overflow">Menu</string>
     <string name="title_activity_step1">step1Activity</string>
 </resources>
