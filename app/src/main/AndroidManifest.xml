@@ -14,12 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".step1Activity"
-            android:label="@string/title_activity_step1"
+            android:name=".start_calibration"
+            android:label="@string/title_activity_start_calibration"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".child_calibration"
-            android:label="@string/title_activity_child_calibration"
+            android:name=".step1Activity"
+            android:label="@string/title_activity_step1"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>

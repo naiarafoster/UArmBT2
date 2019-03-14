@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         imageView2.startAnimation(myanim);
         imageView3.startAnimation(myanim);
 
-        final Intent i = new Intent(this, child_calibration.class);
+        final Intent i = new Intent(this, start_calibration.class);
 
 
 
