@@ -3,8 +3,7 @@ package com.example.uarmbt;
 import android.app.Activity;
 import android.content.*;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,24 +14,10 @@ import android.view.MenuInflater;
 import android.widget.Toast;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothSocket;
-import android.os.Handler;
-import android.os.SystemClock;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.ListView;
+
 import android.widget.TextView;
 
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.util.Set;
-import java.util.UUID;
-import java.util.ArrayList;
 
 import com.macroyau.blue2serial.BluetoothDeviceListDialog;
 import com.macroyau.blue2serial.BluetoothSerial;
@@ -59,7 +44,6 @@ public class step1Activity extends AppCompatActivity implements BluetoothSerialL
 
         bluetoothSerial = new BluetoothSerial(this, this);
 
-        TextView textView = (TextView) findViewById(R.id.textView_calibration);
 
 
 
@@ -121,6 +105,7 @@ public class step1Activity extends AppCompatActivity implements BluetoothSerialL
                 return true;
 
             case R.id.action_overflow:
+                onBluetoothSerialWrite(String.valueOf(2));
 
                 return true;
 
@@ -253,9 +238,10 @@ public class step1Activity extends AppCompatActivity implements BluetoothSerialL
     @Override
     public void onBluetoothSerialWrite(String message) {
         // Print the outgoing message on the terminal screen
-        textView.append(getString(R.string.terminal_message_template,
-                bluetoothSerial.getLocalAdapterName(),
-                message));
+        bluetoothSerial.write(message);
+        //textView.append(getString(R.string.terminal_message_template,
+        //bluetoothSerial.getLocalAdapterName(),
+        //message));
         //svTerminal.post(scrollTerminalToBottom);
     }
 
