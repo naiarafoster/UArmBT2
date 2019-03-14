@@ -20,7 +20,7 @@ public class start_calibration extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button button = (Button) findViewById(R.id.button_calibration);
+        Button button = findViewById(R.id.button_calibration);
 
         //capture button click
         button.setOnClickListener(new View.OnClickListener() {
@@ -37,7 +37,7 @@ public class start_calibration extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
+        inflater.inflate(R.menu.menu_start_calibration, menu);
 
         // return true so that the menu pop up is opened
         return true;
