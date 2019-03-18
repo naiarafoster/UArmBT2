@@ -8,6 +8,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.view.MenuItem;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -28,6 +29,7 @@ public class step1Activity extends AppCompatActivity implements BluetoothSerialL
 
     private TextView textView;
     private BluetoothSerial bluetoothSerial;
+    private Button button;
 
     private final static int REQUEST_ENABLE_BLUETOOTH = 1; // used to identify adding bluetooth names
 
@@ -44,7 +46,14 @@ public class step1Activity extends AppCompatActivity implements BluetoothSerialL
 
         bluetoothSerial = new BluetoothSerial(this, this);
 
+        button = findViewById(R.id.button_step1);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
 
+        onBluetoothSerialWrite(String.valueOf(2));
+            }
+
+        });
 
 
     }
@@ -105,7 +114,7 @@ public class step1Activity extends AppCompatActivity implements BluetoothSerialL
                 return true;
 
             case R.id.action_overflow:
-                onBluetoothSerialWrite(String.valueOf(2));
+                //onBluetoothSerialWrite(String.valueOf(2));
 
                 return true;
 
@@ -232,6 +241,7 @@ public class step1Activity extends AppCompatActivity implements BluetoothSerialL
         textView.append(getString(R.string.terminal_message_template,
                 bluetoothSerial.getConnectedDeviceName(),
                 message));
+
         //svTerminal.post(scrollTerminalToBottom);
     }
 
